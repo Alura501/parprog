@@ -6,17 +6,7 @@ import java.util.Scanner;
 public class App 
 {
 
-    public static String generate() {
-        Random random= new Random();
-        Random random2= new Random();
-        String symbols = "QWERTYUIOPASDFGHJKLZXCVBNM";
-        StringBuilder randString = new StringBuilder();
-        int count=random2.nextInt(10)+1;
-        for(int i=0;i<count;i++)
-            randString.append(symbols.charAt(random.nextInt(symbols.length())));
-        //System.out.println(randString);
-        return randString.toString();
-    }
+
 
     public void WriteToFile(String text){
         try(FileWriter writer = new FileWriter("notes3.txt", true))
