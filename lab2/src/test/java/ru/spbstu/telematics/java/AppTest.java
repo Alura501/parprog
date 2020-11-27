@@ -19,28 +19,28 @@ import static org.junit.Assert.*;
 public class AppTest 
     extends TestSuite
 {
-    private Stack<Integer> javaStack;
+    /*private Stack<Integer> javaStack;
     private MyStack<Integer> myStack;
 
     private<T> Boolean CollectionsAreEquals(Collection<T> c1, Collection<T> c2 ){
         return c1.equals(c2);
     }
 
-/*    @Before
+    @Before
     public static void SetUp(){
-
+        Stack<Integer> javaStack = new Stack<Integer>();
+        MyStack<Integer> myStack = new MyStack<Integer>();
     }
 
 
- */
+
 
 
 
 
     @Test
     public void TestPush(){
-        Stack<Integer> javaStack = new Stack<Integer>();
-        MyStack<Integer> myStack = new MyStack<Integer>();
+
 
         javaStack.push(1);
         javaStack.push(2);
@@ -71,6 +71,8 @@ public class AppTest
 
     }
 
+
+     */
 
 
 }
