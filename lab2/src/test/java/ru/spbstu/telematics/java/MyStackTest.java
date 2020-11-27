@@ -20,7 +20,7 @@ public class MyStackTest
     private Stack<Integer> javaStack;
     private MyStack<Integer> myStack;
 
-    private<T> Boolean CollectionsAreEquals(Collection<T> c1, Collection<T> c2 ){
+    private<T> Boolean CollectionsEqual(Collection<T> c1, Collection<T> c2 ){
         if (c1==null&&c2==null)
             return true;
         if (c1==null)
@@ -50,19 +50,19 @@ public class MyStackTest
     public void TestPush(){
         javaStack.push(10);
         myStack.push(10);
-        Assert.assertTrue(CollectionsAreEquals(myStack, javaStack));
+        Assert.assertTrue(CollectionsEqual(myStack, javaStack));
     }
 
     @Test
     public void TestRemove(){
         Assert.assertEquals(myStack.remove(7),  javaStack.remove((Object)7));
-        Assert.assertTrue(CollectionsAreEquals(myStack, javaStack));
+        Assert.assertTrue(CollectionsEqual(myStack, javaStack));
 
         Assert.assertEquals(myStack.remove(10),  javaStack.remove((Object)10));
-        Assert.assertTrue(CollectionsAreEquals(myStack, javaStack));
+        Assert.assertTrue(CollectionsEqual(myStack, javaStack));
 
         Assert.assertEquals(myStack.remove(null),  javaStack.remove(null));
-        Assert.assertTrue(CollectionsAreEquals(myStack, javaStack));
+        Assert.assertTrue(CollectionsEqual(myStack, javaStack));
     }
 
     @Test
@@ -80,13 +80,13 @@ public class MyStackTest
     @Test
     public void TestPop(){
         Assert.assertEquals(javaStack.pop(),myStack.pop());
-        Assert.assertTrue(CollectionsAreEquals(myStack, javaStack));
+        Assert.assertTrue(CollectionsEqual(myStack, javaStack));
     }
 
     @Test
     public void TestPeek(){
         Assert.assertEquals(javaStack.peek(),myStack.peek());
-        Assert.assertTrue(CollectionsAreEquals(myStack, javaStack));
+        Assert.assertTrue(CollectionsEqual(myStack, javaStack));
     }
 
 
@@ -106,7 +106,7 @@ public class MyStackTest
     @Test
     public void TestAdd(){
         Assert.assertEquals(javaStack.add(7),myStack.add(7));
-        Assert.assertTrue(CollectionsAreEquals(myStack, javaStack));
+        Assert.assertTrue(CollectionsEqual(myStack, javaStack));
 
         Stack<Integer> st=new Stack<Integer>();
         st.push(5);
@@ -114,7 +114,7 @@ public class MyStackTest
         st.push(9);
 
         Assert.assertEquals(javaStack.addAll(st),myStack.addAll(st));
-        Assert.assertTrue(CollectionsAreEquals(myStack, javaStack));
+        Assert.assertTrue(CollectionsEqual(myStack, javaStack));
 
     }
 
@@ -143,11 +143,11 @@ public class MyStackTest
         st.push(2);
         st.push(7);
         Assert.assertEquals(javaStack.retainAll(st),myStack.retainAll(st));
-        Assert.assertTrue(CollectionsAreEquals(myStack, javaStack));
+        Assert.assertTrue(CollectionsEqual(myStack, javaStack));
 
         st.clear();
         Assert.assertEquals(javaStack.retainAll(st),myStack.retainAll(st));
-        Assert.assertTrue(CollectionsAreEquals(myStack, javaStack));
+        Assert.assertTrue(CollectionsEqual(myStack, javaStack));
 
 
     }
