@@ -10,10 +10,6 @@ import java.util.Stack;
  */
 public class App 
 {
-    private<T> Boolean CollectionsAreEquals(Collection<T> c1, Collection<T> c2 ){
-        return c1.equals(c2);
-    }
-
     public static void main( String[] args )
     {
 
@@ -51,13 +47,5 @@ public class App
         {
             System.out.println(it.next());
         }
-
-        f2= integerMyStack.add(null);
-
-
-
-
-
-
     }
 }
