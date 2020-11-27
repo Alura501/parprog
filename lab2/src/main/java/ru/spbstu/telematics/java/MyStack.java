@@ -89,6 +89,7 @@ public class MyStack<T> implements Collection<T>
 
     @Override
     public boolean contains(Object o) {
+        if (o==null) return false;
         for (int i=0; i<size; i++){
             if (stack[i].equals((T)o)) return true;
         }
@@ -101,7 +102,7 @@ public class MyStack<T> implements Collection<T>
         return new MyIterator<T>();
     }
 
-    public class MyIterator<T> implements ListIterator<T>
+    public class MyIterator<T> implements Iterator<T>
     {
         private int index;
 
@@ -110,11 +111,7 @@ public class MyStack<T> implements Collection<T>
             index = -1;
         }
 
-        @Override
-        public void add(T t)
-        {
-            throw new UnsupportedOperationException();
-        }
+
 
         @Override
         public void remove()
@@ -122,11 +119,6 @@ public class MyStack<T> implements Collection<T>
             throw new UnsupportedOperationException();
         }
 
-        @Override
-        public void set(T t)
-        {
-            throw new UnsupportedOperationException();
-        }
 
         @Override
         public boolean hasNext()
@@ -144,33 +136,6 @@ public class MyStack<T> implements Collection<T>
             return (T) stack[index];
         }
 
-        @Override
-        public boolean hasPrevious()
-        {
-            return index > 0;
-        }
-
-        @Override
-        public T previous()
-        {
-            if (!hasPrevious())
-                throw new NoSuchElementException();
-
-            index--;
-            return (T) stack[index];
-        }
-
-        @Override
-        public int nextIndex()
-        {
-            return (hasNext() ? index + 1 : size);
-        }
-
-        @Override
-        public int previousIndex()
-        {
-            return (hasPrevious() ? index: -1);
-        }
     }
 
     @Override
@@ -194,13 +159,15 @@ public class MyStack<T> implements Collection<T>
         int i=0;
         for(Object item: stack){
             arr[i++]=(T1)item;
-        };
+        }
         return arr;
     }
 
     @Override
     public boolean add(T t) {
-        return this.push(t)!=t;
+        if (t==null)
+            return true;
+        return this.push(t)==t;
 
     }
 
@@ -296,7 +263,7 @@ public class MyStack<T> implements Collection<T>
     }
 
     public int search(T object){
-    Integer n=-1;
+    int n=-1;
         for (int i = 0; i < size; i++) {
             if (stack[i].equals(object))
                 {

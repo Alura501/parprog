@@ -19,13 +19,13 @@ public class App
 
         Stack<Integer> m_stack=new Stack<Integer>();
         Integer i= m_stack.capacity();
-        boolean f1 = m_stack.empty();
+        boolean f1 =false;
         m_stack.push(6);
         m_stack.push(7);
         m_stack.push(8);
         m_stack.push(9);
         m_stack.add(10);
-        f1= m_stack.remove((Object)10);
+        f1= m_stack.add(null);
 
         Iterator<Integer> it1 = m_stack.iterator();
 
@@ -52,7 +52,7 @@ public class App
             System.out.println(it.next());
         }
 
-        f2= integerMyStack.equals(m_stack);//this.CollectionsAreEquals(m_stack, integerMyStack);
+        f2= integerMyStack.add(null);
 
 
 
