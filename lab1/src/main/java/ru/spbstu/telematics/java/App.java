@@ -5,9 +5,6 @@ import java.util.Scanner;
 
 public class App 
 {
-
-
-
     public void WriteToFile(String text){
         try(FileWriter writer = new FileWriter("notes3.txt", true))
         {
