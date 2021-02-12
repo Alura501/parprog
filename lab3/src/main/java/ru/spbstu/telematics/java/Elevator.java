@@ -18,7 +18,7 @@ import java.util.concurrent.Semaphore;
         }
         try {
             System.out.println("Elevator moves up");
-            Thread.sleep(5000);
+            Thread.sleep(1000);
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -33,7 +33,7 @@ import java.util.concurrent.Semaphore;
         }
         try {
             System.out.println("Elevator moves down");
-            Thread.sleep(5000);
+            Thread.sleep(1000);
         } catch (Exception ex) {
             System.out.println(ex);
         }

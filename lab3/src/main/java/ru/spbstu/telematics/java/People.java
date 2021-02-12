@@ -38,7 +38,7 @@ class People implements Runnable {
     public void run() {
         enter();
         try {
-            Thread.sleep(6000);
+            Thread.sleep(2000);
         } catch (Exception ex) {
             System.out.println(ex);
         }
