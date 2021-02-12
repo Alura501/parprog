@@ -14,6 +14,8 @@ public class App
     {
 
         Stack<Integer> m_stack=new Stack<Integer>();
+        Stack<Integer> m1= new Stack<Integer>();
+        
         Integer i= m_stack.capacity();
         boolean f1 =false;
         m_stack.push(6);
